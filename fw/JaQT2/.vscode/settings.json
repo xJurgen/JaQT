@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "i2c.h": "c",
+        "usbshell.h": "c",
+        "general.h": "c",
+        "platform.h": "c",
+        "usartconf.h": "c",
+        "rcc.h": "c",
+        "gpio.h": "c",
+        "usart.h": "c",
+        "i2cina219.h": "c",
+        "i2cbase.h": "c",
+        "common.h": "c",
+        "timerconf.h": "c",
+        "cdcacm.h": "c",
+        "usbuart.h": "c",
+        "memorymap.h": "c",
+        "gpiocommands.h": "c",
+        "usbstrings.h": "c",
+        "honeywell.h": "c",
+        "usbd.h": "c",
+        "tokenizer.h": "c",
+        "flash.h": "c"
+    }
+}

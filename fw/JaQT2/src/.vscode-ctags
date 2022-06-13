@@ -1,0 +1,381 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+%.bin	Makefile	/^%.bin:	%.elf$/;"	t
+%.hex	Makefile	/^%.hex:	%$/;"	t
+%.o	Makefile	/^%.o:	%.c$/;"	t
+BOARD_IDENT	platform.h	/^#define BOARD_IDENT /;"	d
+BOARD_NO	version.h	/^#define BOARD_NO /;"	d
+BUILD_TIME	version.h	/^#define BUILD_TIME /;"	d
+CC	Makefile	/^CC = $(CROSS_COMPILE)gcc$/;"	m
+CDCACM_PACKET_SIZE	usb/cdcacm.h	/^#define CDCACM_PACKET_SIZE /;"	d
+CROSS_COMPILE	Makefile	/^CROSS_COMPILE ?= arm-none-eabi-$/;"	m
+DATA_TIME	wiegand/wiegand.c	/^#define DATA_TIME /;"	d	file:
+DATETIME	Makefile	/^DATETIME := $(shell date --iso-8601=seconds)$/;"	m
+DEBUG_COMMANDS	version.h	/^#define DEBUG_COMMANDS /;"	d
+DEP	Makefile	/^DEP =			\\$/;"	m
+ENABLE_DEBUG	Makefile	/^ENABLE_DEBUG ?=$/;"	m
+ERR_LINE_0	wiegand/wiegand.c	/^	ERR_LINE_0,$/;"	e	enum:__anon530113430103	file:
+ERR_LINE_1	wiegand/wiegand.c	/^	ERR_LINE_1,$/;"	e	enum:__anon530113430103	file:
+ERR_TIMEOUT	wiegand/wiegand.c	/^	ERR_TIMEOUT,$/;"	e	enum:__anon530113430103	file:
+ERR_WRONG_ORDER	wiegand/wiegand.c	/^	ERR_WRONG_ORDER,$/;"	e	enum:__anon530113430103	file:
+ERR_WRONG_TIME_INTERVAL	wiegand/wiegand.c	/^	ERR_WRONG_TIME_INTERVAL$/;"	e	enum:__anon530113430103	file:
+FALLING	periph/exti/exticonf.h	/^#define FALLING /;"	d
+FIFO_SIZE	usb/usbuart.c	/^#define FIFO_SIZE /;"	d	file:
+FIRMWARE_VERSION	version.h	/^#define FIRMWARE_VERSION /;"	d
+GET_ASCII	control_shell/usbshell.c	/^#define GET_ASCII(/;"	d	file:
+GPIO_MAX	gpio/gpiocontrol.c	/^#define GPIO_MAX /;"	d	file:
+GPIO_MIN	gpio/gpiocontrol.c	/^#define GPIO_MIN /;"	d	file:
+GPIOoff	gpio/gpiocontrol.c	/^static void GPIOoff(uint32_t base, uint16_t mask, int periph)$/;"	f	typeref:typename:void	file:
+GPIOon	gpio/gpiocontrol.c	/^static void GPIOon(uint32_t base, uint16_t mask, int periph)$/;"	f	typeref:typename:void	file:
+I2C_ADDRESS	i2c/i2cbase.c	/^#define I2C_ADDRESS /;"	d	file:
+I2C_EXPANDER_ADDRESS	i2c/i2cbase.h	/^#define I2C_EXPANDER_ADDRESS /;"	d
+INA219_CONFIG_BADCRES_12BIT	i2c/i2cina219.c	/^#define INA219_CONFIG_BADCRES_12BIT /;"	d	file:
+INA219_CONFIG_BVOLTAGERANGE_16V	i2c/i2cina219.c	/^#define INA219_CONFIG_BVOLTAGERANGE_16V /;"	d	file:
+INA219_CONFIG_BVOLTAGERANGE_32V	i2c/i2cina219.c	/^#define INA219_CONFIG_BVOLTAGERANGE_32V /;"	d	file:
+INA219_CONFIG_GAIN_1_40MV	i2c/i2cina219.c	/^#define INA219_CONFIG_GAIN_1_40MV /;"	d	file:
+INA219_CONFIG_GAIN_8_320MV	i2c/i2cina219.c	/^#define INA219_CONFIG_GAIN_8_320MV /;"	d	file:
+INA219_CONFIG_MODE_SANDBVOLT_CONTINUOUS	i2c/i2cina219.c	/^#define INA219_CONFIG_MODE_SANDBVOLT_CONTINUOUS /;"	d	file:
+INA219_CONFIG_SADCRES_12BIT_1S_532US	i2c/i2cina219.c	/^#define INA219_CONFIG_SADCRES_12BIT_1S_532US /;"	d	file:
+INA219_REG_BUSVOLTAGE	i2c/i2cina219.c	/^#define INA219_REG_BUSVOLTAGE /;"	d	file:
+INA219_REG_CALIBRATION	i2c/i2cina219.c	/^#define INA219_REG_CALIBRATION /;"	d	file:
+INA219_REG_CONFIG	i2c/i2cina219.c	/^#define INA219_REG_CONFIG /;"	d	file:
+INA219_REG_CURRENT	i2c/i2cina219.c	/^#define INA219_REG_CURRENT /;"	d	file:
+INA219_REG_POWER	i2c/i2cina219.c	/^#define INA219_REG_POWER /;"	d	file:
+INA219_REG_SHUNTVOLTAGE	i2c/i2cina219.c	/^#define INA219_REG_SHUNTVOLTAGE /;"	d	file:
+IRQ_PRI_USB	usb/cdcacm.c	/^#define IRQ_PRI_USB	/;"	d	file:
+IRQ_PRI_USBUSART	usb/usartconf.c	/^#define IRQ_PRI_USBUSART	/;"	d	file:
+IRQ_PRI_USBUSART_TIM	periph/timer/timerconf.h	/^#define IRQ_PRI_USBUSART_TIM	/;"	d
+JAQT_DEBUG	Makefile	/^JAQT_DEBUG = 0$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS = $(LDFLAGS_BOOT)$/;"	m
+LDFLAGS_BOOT	Makefile	/^LDFLAGS_BOOT := $(LDFLAGS) --specs=nano.specs \\$/;"	m
+LED_PORT_UART	platform.h	/^#define LED_PORT_UART	/;"	d
+LED_UART	platform.h	/^#define LED_UART	/;"	d
+MAX_PACKET_SIZE	control_shell/commandbuffer.h	/^#define MAX_PACKET_SIZE /;"	d
+NO_ERR	wiegand/wiegand.c	/^	NO_ERR,$/;"	e	enum:__anon530113430103	file:
+OBJ	Makefile	/^OBJ =			\\$/;"	m
+OBJ	Makefile	/^OBJ = $(SRC:.c=.o)$/;"	m
+OBJCOPY	Makefile	/^OBJCOPY = $(CROSS_COMPILE)objcopy$/;"	m
+OPT_FLAGS	Makefile	/^OPT_FLAGS = -Os$/;"	m
+OPT_FLAGS	Makefile	/^OPT_FLAGS ?= -O2$/;"	m
+PAUSE_TIME	wiegand/wiegand.c	/^#define PAUSE_TIME /;"	d	file:
+PERIPH_BOTH	gpio/gpiocontrol.c	/^	PERIPH_BOTH$/;"	e	enum:peripherals	file:
+PERIPH_GPIO	gpio/gpiocontrol.c	/^	PERIPH_GPIO,$/;"	e	enum:peripherals	file:
+PERIPH_I2C	gpio/gpiocontrol.c	/^	PERIPH_I2C,$/;"	e	enum:peripherals	file:
+Q	Makefile	/^Q := @$/;"	m
+RDI_SYS_ISTTY	usb/usbuart.c	/^	RDI_SYS_ISTTY = 0x09,$/;"	e	enum:__anon6a7081750103	file:
+RDI_SYS_OPEN	usb/usbuart.c	/^	RDI_SYS_OPEN = 0x01,$/;"	e	enum:__anon6a7081750103	file:
+RDI_SYS_WRITE	usb/usbuart.c	/^	RDI_SYS_WRITE = 0x05,$/;"	e	enum:__anon6a7081750103	file:
+RISING	periph/exti/exticonf.h	/^#define RISING /;"	d
+SKIP_CYCLE	control_shell/usbshell.c	/^#define SKIP_CYCLE(/;"	d	file:
+SRC	Makefile	/^SRC =			\\$/;"	m
+TIME_OFFSET	wiegand/wiegand.c	/^#define TIME_OFFSET /;"	d	file:
+USBUART_RUN_FREQ_HZ	periph/timer/timerconf.c	/^#define USBUART_RUN_FREQ_HZ /;"	d	file:
+USBUART_TIMER_FREQ_HZ	periph/timer/timerconf.c	/^#define USBUART_TIMER_FREQ_HZ /;"	d	file:
+USB_DRIVER	usb/cdcacm.c	/^#define USB_DRIVER /;"	d	file:
+USB_IRQ	usb/cdcacm.c	/^#define USB_IRQ	/;"	d	file:
+USB_ISR	usb/cdcacm.c	/^#define USB_ISR	/;"	d	file:
+USB_ISR	usb/cdcacm.c	/^void USB_ISR(void)$/;"	f	typeref:typename:void
+VERSION	Makefile	/^VERSION = 1.1$/;"	m
+VIRTUAL_IN	usb/cdcacm.h	/^#define VIRTUAL_IN /;"	d
+VIRTUAL_OUT	usb/cdcacm.h	/^#define VIRTUAL_OUT /;"	d
+WIEGAND_DEBUG	version.h	/^#define WIEGAND_DEBUG /;"	d
+WIEGAND_MAX_SIZE	wiegand/wiegand.h	/^#define WIEGAND_MAX_SIZE /;"	d
+_GNU_SOURCE	general.h	/^#define _GNU_SOURCE$/;"	d
+__CDCACM_H	usb/cdcacm.h	/^#define __CDCACM_H$/;"	d
+__CLOCK_CONF_H	periph/clock/clockconf.h	/^#define __CLOCK_CONF_H$/;"	d
+__COMMAND_BUFFER_H	control_shell/commandbuffer.h	/^#define __COMMAND_BUFFER_H$/;"	d
+__DEBUG_RS485_H	serial/rs485/debug/debugrs485.h	/^#define __DEBUG_RS485_H$/;"	d
+__EXTI_CONF_H	periph/exti/exticonf.h	/^#define __EXTI_CONF_H$/;"	d
+__GENERAL_H	general.h	/^#define __GENERAL_H$/;"	d
+__GPIO_COMMANDS_H	control_shell/gpiocommands.h	/^#define __GPIO_COMMANDS_H$/;"	d
+__GPIO_CONF_H	periph/gpio/gpioconf.h	/^#define __GPIO_CONF_H$/;"	d
+__GPIO_CONTROL_H	gpio/gpiocontrol.h	/^#define __GPIO_CONTROL_H$/;"	d
+__I2CBASE_H	i2c/i2cbase.h	/^#define __I2CBASE_H$/;"	d
+__I2C_GPIO_H	i2c/i2cgpio.h	/^#define __I2C_GPIO_H$/;"	d
+__I2C_INA219_H	i2c/i2cina219.h	/^#define __I2C_INA219_H$/;"	d
+__PLATFORM_H	platform.h	/^#define __PLATFORM_H$/;"	d
+__PRINT_FLOAT_H	print_float.h	/^#define __PRINT_FLOAT_H$/;"	d
+__RS485_HONEYWELL_H	serial/tester/honeywell/honeywell.h	/^#define __RS485_HONEYWELL_H$/;"	d
+__TIMER_CONF_H	periph/timer/timerconf.h	/^#define __TIMER_CONF_H$/;"	d
+__TOKENIZER_H	control_shell/tokenizer.h	/^#define __TOKENIZER_H$/;"	d
+__USART_CONF_H	usb/usartconf.h	/^#define __USART_CONF_H$/;"	d
+__USBSHELL_H	control_shell/usbshell.h	/^#define __USBSHELL_H$/;"	d
+__USBSTRINGS_H	control_shell/usbstrings.h	/^#define __USBSTRINGS_H$/;"	d
+__USBUART_H	usb/usbuart.h	/^#define __USBUART_H$/;"	d
+__WIEGAND_COMMANDS_H	control_shell/wiegandcommands.h	/^#define __WIEGAND_COMMANDS_H$/;"	d
+__WIEGAND_H	wiegand/wiegand.h	/^#define __WIEGAND_H$/;"	d
+__anon530113430103	wiegand/wiegand.c	/^typedef enum {$/;"	g	file:
+__anon6a7081750103	usb/usbuart.c	/^enum {$/;"	g	file:
+__anon6a708175020a	usb/usbuart.c	/^	union {$/;"	u	struct:ex_frame	file:
+__anonec9d58ea0108	usb/cdcacm.c	/^static const struct {$/;"	s	file:
+__anonec9d58ea0208	usb/cdcacm.c	/^static const struct {$/;"	s	file:
+__anonec9d58ea0308	usb/cdcacm.c	/^static const struct {$/;"	s	file:
+__anonec9d58ea0408	usb/cdcacm.c	/^static const struct {$/;"	s	file:
+_gpio_clear	platform.h	/^static inline void _gpio_clear(uint32_t gpioport, uint16_t gpios)$/;"	f	typeref:typename:void
+_gpio_get	platform.h	/^static inline uint16_t _gpio_get(uint32_t gpioport, uint16_t gpios)$/;"	f	typeref:typename:uint16_t
+_gpio_set	platform.h	/^static inline void _gpio_set(uint32_t gpioport, uint16_t gpios)$/;"	f	typeref:typename:void
+acm	usb/cdcacm.c	/^	struct usb_cdc_acm_descriptor acm;$/;"	m	struct:__anonec9d58ea0108	typeref:struct:usb_cdc_acm_descriptor	file:
+acm	usb/cdcacm.c	/^	struct usb_cdc_acm_descriptor acm;$/;"	m	struct:__anonec9d58ea0208	typeref:struct:usb_cdc_acm_descriptor	file:
+acm	usb/cdcacm.c	/^	struct usb_cdc_acm_descriptor acm;$/;"	m	struct:__anonec9d58ea0308	typeref:struct:usb_cdc_acm_descriptor	file:
+acm	usb/cdcacm.c	/^	struct usb_cdc_acm_descriptor acm;$/;"	m	struct:__anonec9d58ea0408	typeref:struct:usb_cdc_acm_descriptor	file:
+add_to_buffer	control_shell/commandbuffer.c	/^void add_to_buffer(const void *messageBuffer, int pos){$/;"	f	typeref:typename:void
+all	Makefile	/^all: bootloader jaqt2.bin$/;"	t
+begin_test_rs485	serial/tester/honeywell/honeywell.c	/^void begin_test_rs485()$/;"	f	typeref:typename:void
+bootloader	Makefile	/^bootloader:$/;"	t
+bufMessageLining	control_shell/usbstrings.h	/^static const char bufMessageLining[] = "*****************************\\r\\n";$/;"	v	typeref:typename:const char[]
+buf_rx1	usb/usbuart.c	/^static uint8_t buf_rx1[FIFO_SIZE];$/;"	v	typeref:typename:uint8_t[]	file:
+buf_rx1_in	usb/usbuart.c	/^static uint8_t buf_rx1_in;$/;"	v	typeref:typename:uint8_t	file:
+buf_rx1_out	usb/usbuart.c	/^static uint8_t buf_rx1_out;$/;"	v	typeref:typename:uint8_t	file:
+buf_rx2	usb/usbuart.c	/^static uint8_t buf_rx2[FIFO_SIZE];$/;"	v	typeref:typename:uint8_t[]	file:
+buf_rx2_in	usb/usbuart.c	/^static uint8_t buf_rx2_in;$/;"	v	typeref:typename:uint8_t	file:
+buf_rx2_out	usb/usbuart.c	/^static uint8_t buf_rx2_out;$/;"	v	typeref:typename:uint8_t	file:
+buf_rx3	usb/usbuart.c	/^static uint8_t buf_rx3[FIFO_SIZE];$/;"	v	typeref:typename:uint8_t[]	file:
+buf_rx3_in	usb/usbuart.c	/^static uint8_t buf_rx3_in;$/;"	v	typeref:typename:uint8_t	file:
+buf_rx3_out	usb/usbuart.c	/^static uint8_t buf_rx3_out;$/;"	v	typeref:typename:uint8_t	file:
+call_mgmt	usb/cdcacm.c	/^	struct usb_cdc_call_management_descriptor call_mgmt;$/;"	m	struct:__anonec9d58ea0108	typeref:struct:usb_cdc_call_management_descriptor	file:
+call_mgmt	usb/cdcacm.c	/^	struct usb_cdc_call_management_descriptor call_mgmt;$/;"	m	struct:__anonec9d58ea0208	typeref:struct:usb_cdc_call_management_descriptor	file:
+call_mgmt	usb/cdcacm.c	/^	struct usb_cdc_call_management_descriptor call_mgmt;$/;"	m	struct:__anonec9d58ea0308	typeref:struct:usb_cdc_call_management_descriptor	file:
+call_mgmt	usb/cdcacm.c	/^	struct usb_cdc_call_management_descriptor call_mgmt;$/;"	m	struct:__anonec9d58ea0408	typeref:struct:usb_cdc_call_management_descriptor	file:
+cdc_union	usb/cdcacm.c	/^	struct usb_cdc_union_descriptor cdc_union;$/;"	m	struct:__anonec9d58ea0108	typeref:struct:usb_cdc_union_descriptor	file:
+cdc_union	usb/cdcacm.c	/^	struct usb_cdc_union_descriptor cdc_union;$/;"	m	struct:__anonec9d58ea0208	typeref:struct:usb_cdc_union_descriptor	file:
+cdc_union	usb/cdcacm.c	/^	struct usb_cdc_union_descriptor cdc_union;$/;"	m	struct:__anonec9d58ea0308	typeref:struct:usb_cdc_union_descriptor	file:
+cdc_union	usb/cdcacm.c	/^	struct usb_cdc_union_descriptor cdc_union;$/;"	m	struct:__anonec9d58ea0408	typeref:struct:usb_cdc_union_descriptor	file:
+cdcacm_control_request	usb/cdcacm.c	/^static enum usbd_request_return_codes cdcacm_control_request(usbd_device *dev,$/;"	f	typeref:enum:usbd_request_return_codes	file:
+cdcacm_get_config	usb/cdcacm.c	/^int cdcacm_get_config(void)$/;"	f	typeref:typename:int
+cdcacm_init	usb/cdcacm.c	/^void cdcacm_init(void)$/;"	f	typeref:typename:void
+cdcacm_set_config	usb/cdcacm.c	/^static void cdcacm_set_config(usbd_device *dev, uint16_t wValue)$/;"	f	typeref:typename:void	file:
+cdcacm_set_modem_state	usb/cdcacm.c	/^static void cdcacm_set_modem_state(usbd_device *dev, int iface, bool dsr, bool dcd)$/;"	f	typeref:typename:void	file:
+checkTokens	control_shell/tokenizer.c	/^int checkTokens(char *str)$/;"	f	typeref:typename:int
+checkWiegandSize	control_shell/wiegandcommands.c	/^const char* checkWiegandSize()$/;"	f	typeref:typename:const char *
+clean	Makefile	/^clean:	host_clean$/;"	t
+clockSETUP	periph/clock/clockconf.c	/^void clockSETUP(void)$/;"	f	typeref:typename:void
+cmd	i2c/i2cgpio.c	/^uint8_t cmd = 0x00;$/;"	v	typeref:typename:uint8_t
+config	usb/cdcacm.c	/^static const struct usb_config_descriptor config = {$/;"	v	typeref:typename:const struct usb_config_descriptor	file:
+configured	usb/cdcacm.c	/^static int configured;$/;"	v	typeref:typename:int	file:
+continuousWiegand	wiegand/wiegand.c	/^uint8_t continuousWiegand = 0;$/;"	v	typeref:typename:uint8_t
+counter	wiegand/wiegand.c	/^int counter = 0;$/;"	v	typeref:typename:int
+d0_isr	wiegand/wiegand.c	/^void d0_isr()$/;"	f	typeref:typename:void
+d1_isr	wiegand/wiegand.c	/^void d1_isr(){$/;"	f	typeref:typename:void
+dataText	control_shell/usbstrings.h	/^static const char dataText[] = "\\r\\nData: ";$/;"	v	typeref:typename:const char[]
+dataTimes	control_shell/usbstrings.h	/^static const char dataTimes[] = "\\r\\nData times: ";$/;"	v	typeref:typename:const char[]
+data_failed_rs485_test	serial/tester/honeywell/honeywell.c	/^int data_failed_rs485_test;$/;"	v	typeref:typename:int
+debug_monitor_handler_c	usb/usbuart.c	/^void debug_monitor_handler_c(struct ex_frame *sp)$/;"	f	typeref:typename:void
+delay_test_rs485	serial/tester/honeywell/honeywell.c	/^void delay_test_rs485()$/;"	f	typeref:typename:void
+delete_last	control_shell/commandbuffer.c	/^void delete_last() {$/;"	f	typeref:typename:void
+delim	control_shell/tokenizer.c	/^const char* delim = " ";$/;"	v	typeref:typename:const char *
+detect_rev	platform.c	/^uint32_t detect_rev(void)$/;"	f	typeref:typename:uint32_t
+dev	usb/cdcacm.c	/^static const struct usb_device_descriptor dev = {$/;"	v	typeref:typename:const struct usb_device_descriptor	file:
+errData	wiegand/wiegand.c	/^int errData;$/;"	v	typeref:typename:int
+errDataTime	wiegand/wiegand.c	/^int errDataTime;$/;"	v	typeref:typename:int
+errPause	wiegand/wiegand.c	/^int errPause;$/;"	v	typeref:typename:int
+errPauseTime	wiegand/wiegand.c	/^int errPauseTime;$/;"	v	typeref:typename:int
+errReset	wiegand/wiegand.c	/^void errReset(wiegandError errType, uint32_t periph)$/;"	f	typeref:typename:void
+ex_frame	usb/usbuart.c	/^struct ex_frame {$/;"	s	file:
+exti8_direction	wiegand/wiegand.c	/^uint16_t exti8_direction = FALLING;$/;"	v	typeref:typename:uint16_t
+exti9_5_isr	wiegand/wiegand.c	/^void exti9_5_isr(void)$/;"	f	typeref:typename:void
+exti9_direction	wiegand/wiegand.c	/^uint16_t exti9_direction = FALLING;$/;"	v	typeref:typename:uint16_t
+extiWiegandSETUP	periph/exti/exticonf.c	/^void extiWiegandSETUP(uint16_t *exti8_direction, uint16_t *exti9_direction)$/;"	f	typeref:typename:void
+flash	Makefile	/^flash: all$/;"	t
+get_float	print_float.c	/^int get_float(float number, char *str, size_t lenstr)$/;"	f	typeref:typename:int
+getBase	gpio/gpiocontrol.c	/^static uint32_t getBase(uint8_t gpioNum)$/;"	f	typeref:typename:uint32_t	file:
+getContinuousWiegandStatus	wiegand/wiegand.c	/^uint8_t getContinuousWiegandStatus()$/;"	f	typeref:typename:uint8_t
+getGPIO	gpio/gpiocontrol.c	/^int8_t getGPIO(uint8_t gpio)$/;"	f	typeref:typename:int8_t
+getMask	gpio/gpiocontrol.c	/^static void getMask(uint16_t *mask, int *periph, uint8_t *gpioNum)$/;"	f	typeref:typename:void	file:
+getPacketBuffer	control_shell/commandbuffer.c	/^char *getPacketBuffer()$/;"	f	typeref:typename:char *
+getPacketPtr	control_shell/commandbuffer.c	/^uint8_t getPacketPtr()$/;"	f	typeref:typename:uint8_t
+getToken	control_shell/tokenizer.c	/^char *getToken(uint8_t tokenNum)$/;"	f	typeref:typename:char *
+getWiegandSize	wiegand/wiegand.c	/^uint8_t getWiegandSize()$/;"	f	typeref:typename:uint8_t
+getWiegandStatus	wiegand/wiegand.c	/^uint8_t getWiegandStatus()$/;"	f	typeref:typename:uint8_t
+get_485debug_info	serial/rs485/debug/debugrs485.c	/^char* get_485debug_info()$/;"	f	typeref:typename:char *
+get_ina219_addr	i2c/i2cina219.c	/^uint8_t get_ina219_addr(void)$/;"	f	typeref:typename:uint8_t
+gpioMasks	gpio/gpiocontrol.c	/^uint16_t gpioMasks[] = {$/;"	v	typeref:typename:uint16_t[]
+gpioRange	gpio/gpiocontrol.c	/^static uint8_t gpioRange(uint8_t gpio)$/;"	f	typeref:typename:uint8_t	file:
+gpioSETUP	periph/gpio/gpioconf.c	/^void gpioSETUP(void)$/;"	f	typeref:typename:void
+gpioUndefined	gpio/gpiocontrol.c	/^static const char gpioUndefined[] = "[ERROR] GPIO not found!\\r\\n";$/;"	v	typeref:typename:const char[]	file:
+gpio_clear	platform.h	/^#define gpio_clear /;"	d
+gpio_get	platform.h	/^#define gpio_get /;"	d
+gpio_init	platform.c	/^void gpio_init(void){$/;"	f	typeref:typename:void
+gpio_set	platform.h	/^#define gpio_set /;"	d
+header	usb/cdcacm.c	/^	struct usb_cdc_header_descriptor header;$/;"	m	struct:__anonec9d58ea0108	typeref:struct:usb_cdc_header_descriptor	file:
+header	usb/cdcacm.c	/^	struct usb_cdc_header_descriptor header;$/;"	m	struct:__anonec9d58ea0208	typeref:struct:usb_cdc_header_descriptor	file:
+header	usb/cdcacm.c	/^	struct usb_cdc_header_descriptor header;$/;"	m	struct:__anonec9d58ea0308	typeref:struct:usb_cdc_header_descriptor	file:
+header	usb/cdcacm.c	/^	struct usb_cdc_header_descriptor header;$/;"	m	struct:__anonec9d58ea0408	typeref:struct:usb_cdc_header_descriptor	file:
+help	Makefile	/^help:$/;"	t
+help	control_shell/usbstrings.h	/^static const char help[] = "[OK] Commands are:\\r\\n"$/;"	v	typeref:typename:const char[]
+host_clean	Makefile	/^host_clean:$/;"	t
+i2c_data	i2c/i2cgpio.c	/^uint8_t i2c_data;$/;"	v	typeref:typename:uint8_t
+i2c_probe	i2c/i2cbase.c	/^uint8_t i2c_probe(uint8_t addr)$/;"	f	typeref:typename:uint8_t
+i2c_setup	i2c/i2cbase.c	/^void i2c_setup(void)$/;"	f	typeref:typename:void
+ifaces	usb/cdcacm.c	/^static const struct usb_interface ifaces[] = {{$/;"	v	typeref:typename:const struct usb_interface[]	file:
+ina219CurrentDivider_mA	i2c/i2cina219.c	/^uint32_t ina219CurrentDivider_mA = 0;$/;"	v	typeref:typename:uint32_t
+ina219GetBusVoltage_V	i2c/i2cina219.c	/^float ina219GetBusVoltage_V()$/;"	f	typeref:typename:float
+ina219GetBusVoltage_raw	i2c/i2cina219.c	/^static int16_t ina219GetBusVoltage_raw()$/;"	f	typeref:typename:int16_t	file:
+ina219GetCurrent_mA	i2c/i2cina219.c	/^float ina219GetCurrent_mA()$/;"	f	typeref:typename:float
+ina219GetCurrent_raw	i2c/i2cina219.c	/^static int16_t ina219GetCurrent_raw()$/;"	f	typeref:typename:int16_t	file:
+ina219GetPower_mW	i2c/i2cina219.c	/^float ina219GetPower_mW()$/;"	f	typeref:typename:float
+ina219GetPower_raw	i2c/i2cina219.c	/^static int16_t ina219GetPower_raw()$/;"	f	typeref:typename:int16_t	file:
+ina219GetShuntVoltage_mV	i2c/i2cina219.c	/^float ina219GetShuntVoltage_mV()$/;"	f	typeref:typename:float
+ina219GetShuntVoltage_raw	i2c/i2cina219.c	/^static int16_t ina219GetShuntVoltage_raw()$/;"	f	typeref:typename:int16_t	file:
+ina219Init_16V_400mA	i2c/i2cina219.c	/^void ina219Init_16V_400mA(void) {$/;"	f	typeref:typename:void
+ina219Init_32V_1A	i2c/i2cina219.c	/^void ina219Init_32V_1A(void) {$/;"	f	typeref:typename:void
+ina219Init_32V_2A	i2c/i2cina219.c	/^void ina219Init_32V_2A(void) {$/;"	f	typeref:typename:void
+ina219PowerDivider_mW	i2c/i2cina219.c	/^float ina219PowerDivider_mW = 0;$/;"	v	typeref:typename:float
+ina219ReadRegister	i2c/i2cina219.c	/^static int16_t ina219ReadRegister(uint8_t reg_addr)$/;"	f	typeref:typename:int16_t	file:
+ina219SetCalibration_16V_400mA	i2c/i2cina219.c	/^static void ina219SetCalibration_16V_400mA(void)$/;"	f	typeref:typename:void	file:
+ina219SetCalibration_32V_1A	i2c/i2cina219.c	/^static void ina219SetCalibration_32V_1A(void)$/;"	f	typeref:typename:void	file:
+ina219SetCalibration_32V_2A	i2c/i2cina219.c	/^static void ina219SetCalibration_32V_2A(void)$/;"	f	typeref:typename:void	file:
+ina219WriteRegister	i2c/i2cina219.c	/^static void ina219WriteRegister (uint8_t reg_addr, uint16_t value)$/;"	f	typeref:typename:void	file:
+ina219_addr	i2c/i2cina219.c	/^uint8_t ina219_addr = 0x40;$/;"	v	typeref:typename:uint8_t
+ina219_connected	control_shell/usbshell.c	/^uint8_t ina219_connected = 0;$/;"	v	typeref:typename:uint8_t
+ina219error	control_shell/usbstrings.h	/^static const char ina219error[] = "[ERROR] INA219 is not connected!\\r\\n";$/;"	v	typeref:typename:const char[]
+infomessage	control_shell/usbstrings.h	/^static const char infomessage[] = "[OK] JaQT2 (JustAQuickTest2)\\r\\n"$/;"	v	typeref:typename:const char[]
+initToken	control_shell/tokenizer.c	/^void initToken(char *str)$/;"	f	typeref:typename:void
+init_command_buffer	control_shell/commandbuffer.c	/^void init_command_buffer() {$/;"	f	typeref:typename:void
+jaqt2.elf	Makefile	/^jaqt2.elf: version.h $(OBJ)$/;"	t
+labelERROR	control_shell/usbstrings.h	/^static const char labelERROR[] = "[ERROR]\\r\\n";$/;"	v	typeref:typename:const char[]
+labelOK	control_shell/usbstrings.h	/^static const char labelOK[] = "[OK]\\r\\n";$/;"	v	typeref:typename:const char[]
+line0Error	control_shell/usbstrings.h	/^static const char line0Error[] = "Wiegand line 0 error, try again\\r\\n";$/;"	v	typeref:typename:const char[]
+line1Error	control_shell/usbstrings.h	/^static const char line1Error[] = "Wiegand line 1 error, try again\\r\\n";$/;"	v	typeref:typename:const char[]
+lr	usb/usbuart.c	/^	uint32_t r2, r3, r12, lr, pc;$/;"	m	struct:ex_frame	typeref:typename:uint32_t	file:
+main	main.c	/^int main(int argc, char **argv)$/;"	f	typeref:typename:int
+message	wiegand/wiegand.c	/^char message[6];$/;"	v	typeref:typename:char[6]
+missingPackets	control_shell/usbstrings.h	/^static const char missingPackets[] = "(Missing packets)\\r\\n";$/;"	v	typeref:typename:const char[]
+overLimitErrorMessage	control_shell/usbstrings.h	/^static const char overLimitErrorMessage[] = "[ERROR] Wiegand size is bigger than 200\\r\\n";$/;"	v	typeref:typename:const char[]
+packetBuffer	control_shell/commandbuffer.c	/^char packetBuffer[MAX_PACKET_SIZE];$/;"	v	typeref:typename:char[]
+packetNumber	control_shell/usbstrings.h	/^static const char packetNumber[] = "Packet number: ";$/;"	v	typeref:typename:const char[]
+packetPtr	control_shell/commandbuffer.c	/^int packetPtr = 0;$/;"	v	typeref:typename:int
+params	usb/usbuart.c	/^	const int *params;$/;"	m	struct:ex_frame	typeref:typename:const int *	file:
+parity	serial/rs485/debug/debugrs485.c	/^int parity;$/;"	v	typeref:typename:int
+parseGPIOS	control_shell/gpiocommands.c	/^const char* parseGPIOS()$/;"	f	typeref:typename:const char *
+parseWiegand	control_shell/wiegandcommands.c	/^const char* parseWiegand()$/;"	f	typeref:typename:const char *
+pause	wiegand/wiegand.c	/^char pause[6];$/;"	v	typeref:typename:char[6]
+pause0	wiegand/wiegand.c	/^uint32_t pause0[WIEGAND_MAX_SIZE];$/;"	v	typeref:typename:uint32_t[]
+pause0Times	control_shell/usbstrings.h	/^		static const char pause0Times[] = "\\r\\nPause0 times: ";$/;"	v	typeref:typename:const char[]
+pause1	wiegand/wiegand.c	/^uint32_t pause1[WIEGAND_MAX_SIZE];$/;"	v	typeref:typename:uint32_t[]
+pause1Times	control_shell/usbstrings.h	/^		static const char pause1Times[] = "\\r\\nPause1 times: ";$/;"	v	typeref:typename:const char[]
+pauseTimes	control_shell/usbstrings.h	/^static const char pauseTimes[] = "\\r\\nPause times: ";$/;"	v	typeref:typename:const char[]
+pc	usb/usbuart.c	/^	uint32_t r2, r3, r12, lr, pc;$/;"	m	struct:ex_frame	typeref:typename:uint32_t	file:
+peripherals	gpio/gpiocontrol.c	/^enum peripherals{$/;"	g	file:
+platform_init	platform.c	/^void platform_init(void)$/;"	f	typeref:typename:void
+platform_ready	platform.c	/^int platform_ready;$/;"	v	typeref:typename:int
+platform_ready	platform.h	/^int platform_ready;$/;"	v	typeref:typename:int
+platform_timing_init	platform.c	/^void platform_timing_init(void)$/;"	f	typeref:typename:void
+r12	usb/usbuart.c	/^	uint32_t r2, r3, r12, lr, pc;$/;"	m	struct:ex_frame	typeref:typename:uint32_t	file:
+r2	usb/usbuart.c	/^	uint32_t r2, r3, r12, lr, pc;$/;"	m	struct:ex_frame	typeref:typename:uint32_t	file:
+r3	usb/usbuart.c	/^	uint32_t r2, r3, r12, lr, pc;$/;"	m	struct:ex_frame	typeref:typename:uint32_t	file:
+rdi_write	usb/usbuart.c	/^int rdi_write(int tim, int fn, const char *buf, size_t len)$/;"	f	typeref:typename:int
+read232	control_shell/usbshell.c	/^int read232 = 0;$/;"	v	typeref:typename:int
+read485	control_shell/usbshell.c	/^int read485 = 0;$/;"	v	typeref:typename:int
+read_command	control_shell/usbshell.c	/^void read_command(){$/;"	f	typeref:typename:void
+readdebug	control_shell/usbshell.c	/^int readdebug = 0;$/;"	v	typeref:typename:int
+response	serial/rs485/debug/debugrs485.c	/^char response[30];$/;"	v	typeref:typename:char[30]
+retval	usb/usbuart.c	/^		int retval;$/;"	m	union:ex_frame::__anon6a708175020a	typeref:typename:int	file:
+rev	platform.c	/^static uint32_t rev;$/;"	v	typeref:typename:uint32_t	file:
+rs485_sent	serial/tester/honeywell/honeywell.c	/^int rs485_sent;$/;"	v	typeref:typename:int
+rs485_test	serial/tester/honeywell/honeywell.c	/^int rs485_test;$/;"	v	typeref:typename:int
+rs485_tim_wait	serial/tester/honeywell/honeywell.c	/^int rs485_tim_wait;$/;"	v	typeref:typename:int
+send_usbd_packet	control_shell/usbshell.c	/^void send_usbd_packet(usbd_device *dev, uint8_t addr, const char *messageBuffer, uint16_t messag/;"	f	typeref:typename:void
+setAllGPIOS	gpio/gpiocontrol.c	/^void setAllGPIOS(uint8_t value)$/;"	f	typeref:typename:void
+setGPIO	gpio/gpiocontrol.c	/^int8_t setGPIO(uint8_t gpio, uint8_t value)$/;"	f	typeref:typename:int8_t
+setToken	control_shell/tokenizer.c	/^void setToken(char *value, uint8_t tokenNum)$/;"	f	typeref:typename:void
+setUSART	usb/usartconf.c	/^void setUSART(int baudrate, int USBUSART)$/;"	f	typeref:typename:void
+setWiegandSize	wiegand/wiegand.c	/^void setWiegandSize(uint8_t size)$/;"	f	typeref:typename:void
+set_ina219_addr	i2c/i2cina219.c	/^void set_ina219_addr(uint8_t addr)$/;"	f	typeref:typename:void
+set_test_rs485	serial/tester/honeywell/honeywell.c	/^static void set_test_rs485()$/;"	f	typeref:typename:void	file:
+sig8	wiegand/wiegand.c	/^int sig8 = 0;$/;"	v	typeref:typename:int
+sig9	wiegand/wiegand.c	/^int sig9 = 0;$/;"	v	typeref:typename:int
+snprintf	platform.h	/^#define snprintf /;"	d
+sprintf	platform.h	/^#define sprintf /;"	d
+sscanf	platform.h	/^#define sscanf /;"	d
+startContinuousWiegand	wiegand/wiegand.c	/^void startContinuousWiegand()$/;"	f	typeref:typename:void
+startWiegand	wiegand/wiegand.c	/^void startWiegand()$/;"	f	typeref:typename:void
+stopContinuousWiegand	wiegand/wiegand.c	/^void stopContinuousWiegand()$/;"	f	typeref:typename:void
+stopWiegand	wiegand/wiegand.c	/^void stopWiegand()$/;"	f	typeref:typename:void
+stop_test_rs485	serial/tester/honeywell/honeywell.c	/^void stop_test_rs485()$/;"	f	typeref:typename:void
+stopbits	serial/rs485/debug/debugrs485.c	/^int stopbits;$/;"	v	typeref:typename:int
+sys_tick_handler	platform.c	/^void sys_tick_handler(void)$/;"	f	typeref:typename:void
+syscall	usb/usbuart.c	/^		int syscall;$/;"	m	union:ex_frame::__anon6a708175020a	typeref:typename:int	file:
+test_rs485	serial/tester/honeywell/honeywell.c	/^void test_rs485()$/;"	f	typeref:typename:void
+tim1_up_isr	wiegand/wiegand.c	/^void tim1_up_isr(void)$/;"	f	typeref:typename:void
+tim2_isr	usb/usbuart.c	/^void tim2_isr(void)$/;"	f	typeref:typename:void
+tim3_isr	usb/usbuart.c	/^void tim3_isr(void)$/;"	f	typeref:typename:void
+tim4_isr	usb/usbuart.c	/^void tim4_isr(void)$/;"	f	typeref:typename:void
+timInUse	wiegand/wiegand.c	/^int timInUse = 0;$/;"	v	typeref:typename:int
+time0	wiegand/wiegand.c	/^uint32_t time0[WIEGAND_MAX_SIZE];$/;"	v	typeref:typename:uint32_t[]
+time0Times	control_shell/usbstrings.h	/^		static const char time0Times[] = "\\r\\nTime0 times: ";$/;"	v	typeref:typename:const char[]
+time1	wiegand/wiegand.c	/^uint32_t time1[WIEGAND_MAX_SIZE];$/;"	v	typeref:typename:uint32_t[]
+time1Times	control_shell/usbstrings.h	/^		static const char time1Times[] = "\\r\\nTime1 times: ";$/;"	v	typeref:typename:const char[]
+time_failed_rs485_test	serial/tester/honeywell/honeywell.c	/^int time_failed_rs485_test;$/;"	v	typeref:typename:int
+time_ms	platform.c	/^static volatile uint32_t time_ms;$/;"	v	typeref:typename:volatile uint32_t	file:
+timeoutText	control_shell/usbstrings.h	/^static const char timeoutText[] = "(Timeout)\\r\\n";$/;"	v	typeref:typename:const char[]
+timeoutWaitingErr	control_shell/usbstrings.h	/^static const char timeoutWaitingErr[] = " - Timeout while waiting for next packet ";$/;"	v	typeref:typename:const char[]
+timerSETUP	periph/timer/timerconf.c	/^void timerSETUP(void)$/;"	f	typeref:typename:void
+timer_reset	periph/timer/timerconf.c	/^static void timer_reset(uint32_t timer)$/;"	f	typeref:typename:void	file:
+tokenize	control_shell/tokenizer.c	/^static void tokenize(char *str, char* token[])$/;"	f	typeref:typename:void	file:
+tokens	control_shell/tokenizer.c	/^char *tokens[8];$/;"	v	typeref:typename:char * [8]
+uartSETUP	usb/usartconf.c	/^void uartSETUP(void)$/;"	f	typeref:typename:void
+uart_assoc1	usb/cdcacm.c	/^static const struct usb_iface_assoc_descriptor uart_assoc1 = {$/;"	v	typeref:typename:const struct usb_iface_assoc_descriptor	file:
+uart_assoc2	usb/cdcacm.c	/^static const struct usb_iface_assoc_descriptor uart_assoc2 = {$/;"	v	typeref:typename:const struct usb_iface_assoc_descriptor	file:
+uart_assoc3	usb/cdcacm.c	/^static const struct usb_iface_assoc_descriptor uart_assoc3 = {$/;"	v	typeref:typename:const struct usb_iface_assoc_descriptor	file:
+uart_cdcacm_functional_descriptors1	usb/cdcacm.c	/^} __attribute__((packed)) uart_cdcacm_functional_descriptors1 = {$/;"	v	typeref:typename:const struct __anonec9d58ea0108
+uart_cdcacm_functional_descriptors2	usb/cdcacm.c	/^} __attribute__((packed)) uart_cdcacm_functional_descriptors2 = {$/;"	v	typeref:typename:const struct __anonec9d58ea0208
+uart_cdcacm_functional_descriptors3	usb/cdcacm.c	/^} __attribute__((packed)) uart_cdcacm_functional_descriptors3 = {$/;"	v	typeref:typename:const struct __anonec9d58ea0308
+uart_cdcacm_functional_descriptors_virtual	usb/cdcacm.c	/^} __attribute__((packed)) uart_cdcacm_functional_descriptors_virtual = {$/;"	v	typeref:typename:const struct __anonec9d58ea0408
+uart_comm_endp1	usb/cdcacm.c	/^static const struct usb_endpoint_descriptor uart_comm_endp1[] = {{$/;"	v	typeref:typename:const struct usb_endpoint_descriptor[]	file:
+uart_comm_endp2	usb/cdcacm.c	/^static const struct usb_endpoint_descriptor uart_comm_endp2[] = {{$/;"	v	typeref:typename:const struct usb_endpoint_descriptor[]	file:
+uart_comm_endp3	usb/cdcacm.c	/^static const struct usb_endpoint_descriptor uart_comm_endp3[] = {{$/;"	v	typeref:typename:const struct usb_endpoint_descriptor[]	file:
+uart_comm_iface1	usb/cdcacm.c	/^static const struct usb_interface_descriptor uart_comm_iface1[] = {{$/;"	v	typeref:typename:const struct usb_interface_descriptor[]	file:
+uart_comm_iface2	usb/cdcacm.c	/^static const struct usb_interface_descriptor uart_comm_iface2[] = {{$/;"	v	typeref:typename:const struct usb_interface_descriptor[]	file:
+uart_comm_iface3	usb/cdcacm.c	/^static const struct usb_interface_descriptor uart_comm_iface3[] = {{$/;"	v	typeref:typename:const struct usb_interface_descriptor[]	file:
+uart_data_endp1	usb/cdcacm.c	/^static const struct usb_endpoint_descriptor uart_data_endp1[] = {{$/;"	v	typeref:typename:const struct usb_endpoint_descriptor[]	file:
+uart_data_endp2	usb/cdcacm.c	/^static const struct usb_endpoint_descriptor uart_data_endp2[] = {{$/;"	v	typeref:typename:const struct usb_endpoint_descriptor[]	file:
+uart_data_endp3	usb/cdcacm.c	/^static const struct usb_endpoint_descriptor uart_data_endp3[] = {{$/;"	v	typeref:typename:const struct usb_endpoint_descriptor[]	file:
+uart_data_iface1	usb/cdcacm.c	/^static const struct usb_interface_descriptor uart_data_iface1[] = {{$/;"	v	typeref:typename:const struct usb_interface_descriptor[]	file:
+uart_data_iface2	usb/cdcacm.c	/^static const struct usb_interface_descriptor uart_data_iface2[] = {{$/;"	v	typeref:typename:const struct usb_interface_descriptor[]	file:
+uart_data_iface3	usb/cdcacm.c	/^static const struct usb_interface_descriptor uart_data_iface3[] = {{$/;"	v	typeref:typename:const struct usb_interface_descriptor[]	file:
+undefined	control_shell/usbstrings.h	/^static const char undefined[] = "[ERROR] Command not found. Type \\"help\\" to see all commands\\/;"	v	typeref:typename:const char[]
+undefinedCommand	control_shell/usbshell.c	/^void undefinedCommand()$/;"	f	typeref:typename:void
+undefinedGpio	gpio/gpiocontrol.c	/^const char* undefinedGpio() {$/;"	f	typeref:typename:const char *
+underLimitErrorMessage	control_shell/usbstrings.h	/^static const char underLimitErrorMessage[] = "[ERROR] Wiegand size is equal or lower than 0\\r\\/;"	v	typeref:typename:const char[]
+usart1_isr	usb/usbuart.c	/^void usart1_isr(void)$/;"	f	typeref:typename:void
+usart2_isr	usb/usbuart.c	/^void usart2_isr(void)$/;"	f	typeref:typename:void
+usart3_isr	usb/usbuart.c	/^void usart3_isr(void)$/;"	f	typeref:typename:void
+usart_isr	usb/usbuart.c	/^static void usart_isr(int USBUSART, int USBUSART_TIM, uint8_t *buf_rx_out, uint8_t *buf_rx_in, u/;"	f	typeref:typename:void	file:
+usb_strings	usb/cdcacm.c	/^static const char *usb_strings[] = {$/;"	v	typeref:typename:const char * []	file:
+usbd_control_buffer	usb/cdcacm.c	/^uint8_t usbd_control_buffer[256];$/;"	v	typeref:typename:uint8_t[256]
+usbdev	usb/cdcacm.c	/^usbd_device *usbdev;$/;"	v	typeref:typename:usbd_device *
+usbuart1_usb_out_cb	usb/usbuart.c	/^void usbuart1_usb_out_cb(usbd_device *dev, uint8_t ep)$/;"	f	typeref:typename:void
+usbuart2_usb_out_cb	usb/usbuart.c	/^void usbuart2_usb_out_cb(usbd_device *dev, uint8_t ep)$/;"	f	typeref:typename:void
+usbuart3_usb_out_cb	usb/usbuart.c	/^void usbuart3_usb_out_cb(usbd_device *dev, uint8_t ep)$/;"	f	typeref:typename:void
+usbuart_debug_write	usb/usbuart.c	/^int usbuart_debug_write(int tim, const char *buf, size_t len, uint8_t *buf_rx, uint8_t *buf_rx_i/;"	f	typeref:typename:int
+usbuart_init	usb/usbuart.c	/^void usbuart_init(void)$/;"	f	typeref:typename:void
+usbuart_run	usb/usbuart.c	/^static void usbuart_run(int USBUSART_TIM, uint8_t *buf_rx_out, uint8_t *buf_rx_in, uint8_t *buf_/;"	f	typeref:typename:void	file:
+usbuart_set_line_coding	usb/usbuart.c	/^void usbuart_set_line_coding(struct usb_cdc_line_coding *coding, int USBUSART)$/;"	f	typeref:typename:void
+usbuart_usb_in_cb	usb/usbuart.c	/^void usbuart_usb_in_cb(usbd_device *dev, uint8_t ep)$/;"	f	typeref:typename:void
+usbuart_usb_out_cb	usb/usbuart.c	/^static void usbuart_usb_out_cb(int USBUSART, usbd_device *dev, uint8_t ep, int CDCACM_UART_ENDPO/;"	f	typeref:typename:void	file:
+usbuartvirt_usb_out_cb	usb/usbuart.c	/^void usbuartvirt_usb_out_cb(usbd_device *dev, uint8_t ep)$/;"	f	typeref:typename:void
+vasprintf	platform.h	/^#define vasprintf /;"	d
+version.h	Makefile	/^version.h: FORCE$/;"	t
+virt_uart_assoc	usb/cdcacm.c	/^static const struct usb_iface_assoc_descriptor virt_uart_assoc = {$/;"	v	typeref:typename:const struct usb_iface_assoc_descriptor	file:
+virtual_comm_endp	usb/cdcacm.c	/^static const struct usb_endpoint_descriptor virtual_comm_endp[] = {{$/;"	v	typeref:typename:const struct usb_endpoint_descriptor[]	file:
+virtual_comm_iface	usb/cdcacm.c	/^static const struct usb_interface_descriptor virtual_comm_iface[] = {{$/;"	v	typeref:typename:const struct usb_interface_descriptor[]	file:
+virtual_data_endp	usb/cdcacm.c	/^static const struct usb_endpoint_descriptor virtual_data_endp[] = {{$/;"	v	typeref:typename:const struct usb_endpoint_descriptor[]	file:
+virtual_data_iface	usb/cdcacm.c	/^static const struct usb_interface_descriptor virtual_data_iface[] = {{$/;"	v	typeref:typename:const struct usb_interface_descriptor[]	file:
+wait	wiegand/wiegand.c	/^int wait = 0;$/;"	v	typeref:typename:int
+wgerror	wiegand/wiegand.c	/^wiegandError wgerror = NO_ERR;$/;"	v	typeref:typename:wiegandError
+wiegandDone	control_shell/usbstrings.h	/^static const char wiegandDone[] = "Wiegand done\\r\\n";$/;"	v	typeref:typename:const char[]
+wiegandError	wiegand/wiegand.c	/^} wiegandError;$/;"	t	typeref:enum:__anon530113430103	file:
+wiegandFlag	wiegand/wiegand.c	/^uint8_t wiegandFlag = 0;$/;"	v	typeref:typename:uint8_t
+wiegandNum	wiegand/wiegand.c	/^char wiegandNum[WIEGAND_MAX_SIZE];$/;"	v	typeref:typename:char[]
+wiegandPacketErr	control_shell/usbstrings.h	/^static const char wiegandPacketErr[] = " - Wiegand packet error\\r\\n";$/;"	v	typeref:typename:const char[]
+wiegandReset	wiegand/wiegand.c	/^void wiegandReset()$/;"	f	typeref:typename:void
+wiegandSize	wiegand/wiegand.c	/^uint8_t wiegandSize = 26;$/;"	v	typeref:typename:uint8_t
+wiegandStartMessage	control_shell/usbstrings.h	/^static const char wiegandStartMessage[] = "[OK] Wiegand reading has started, please connect the /;"	v	typeref:typename:const char[]
+wiegandStopMessage	control_shell/usbstrings.h	/^static const char wiegandStopMessage[] = "[OK] Wiegand reading has been stopped\\r\\n";$/;"	v	typeref:typename:const char[]
+write	wiegand/wiegand.c	/^int write = 0;$/;"	v	typeref:typename:int
+wrongInterval	control_shell/usbstrings.h	/^static const char wrongInterval[] = " - Wrong packet interval: ";$/;"	v	typeref:typename:const char[]

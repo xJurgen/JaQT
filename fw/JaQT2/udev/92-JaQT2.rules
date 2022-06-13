@@ -1,0 +1,8 @@
+# Just a Quick Test2 app
+# Author: Jiří Veverka
+# Copy this to /etc/udev/rules.d/92-JaQT2.rules
+
+SUBSYSTEM=="tty", ACTION=="add", ATTRS{interface}=="JaQT2 Port 0", SYMLINK+="ttyJaQT2Port0"
+SUBSYSTEM=="tty", ACTION=="add", ATTRS{interface}=="JaQT2 Port 1", SYMLINK+="ttyJaQT2Port1"
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="1d50", ATTR{idProduct}=="6018", MODE="0666"
+
