@@ -1,7 +1,3 @@
-/*
-*   Author: Jiří Veverka
-*   Module implementing wiegand commands from shell
-*/
 #include "wiegandcommands.h"
 #include "usbstrings.h"
 #include "tokenizer.h"

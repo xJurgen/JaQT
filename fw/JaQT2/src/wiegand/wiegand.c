@@ -1,11 +1,3 @@
-/*
-*
-*	Author: Jiří Veverka (xvever12):
-*	Module implementing wiegand communicaton
-*
-*/
-
-
 #include <libopencm3/stm32/timer.h>
 #include <libopencm3/cm3/nvic.h>
 #include <libopencm3/stm32/exti.h>
@@ -13,9 +5,11 @@
 #include "../usb/cdcacm.h"
 #include "wiegand.h"
 #include "../control_shell/wiegandcommands.h"
+#include "../control_shell/gpiocommands.h"
 #include "../general.h"
 #include "../control_shell/usbshell.h"
 #include "../control_shell/usbstrings.h"
+#include "../serial/tester/honeywell/honeywell.h"
 #include "../periph/exti/exticonf.h"
 #include <string.h>
 
@@ -67,11 +61,13 @@ wiegandError wgerror = NO_ERR;
 uint8_t wiegandFlag = 0;
 void startWiegand()
 {
+	statusOn(3);
 	wiegandFlag = 1;
 }
 
 void stopWiegand()
 {
+	statusOff(3);
 	wiegandFlag = 0;
 }
 
@@ -168,7 +164,8 @@ void d0_isr()
 	}
 }
 
-void d1_isr(){
+void d1_isr()
+{
 	exti_reset_request(EXTI9);
 	
 	if (exti9_direction == RISING) {
@@ -369,7 +366,7 @@ void tim1_up_isr(void)
 		}
 		return;
 	}
-	if (wgerror && platform_ready) {
+	if (wgerror && get_platform_status()) {
 		if (wgerror == ERR_LINE_0) {
 			send_usbd_packet(usbdev, VIRTUAL_OUT, labelERROR, sizeof(labelERROR), 0);
 			send_usbd_packet(usbdev, VIRTUAL_OUT, line0Error, sizeof(line0Error), 0);

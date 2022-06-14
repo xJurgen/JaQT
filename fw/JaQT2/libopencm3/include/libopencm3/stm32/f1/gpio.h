@@ -321,7 +321,7 @@ LGPL License Terms @ref lgpl_license
 #define GPIO_UART5_RX			GPIO2		/* PD2 */
 
 /* UART5 BANK */
-#define GPIO_BANK_UART5_TX		GPIOC		/* PC12 */
+#define GPIO_BANK_UART5_TX		GPIOC		/* PC12 */GPIO_ODR
 #define GPIO_BANK_UART5_RX		GPIOD		/* PD2 */
 
 /* UART4 GPIO */

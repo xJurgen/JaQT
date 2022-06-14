@@ -1,10 +1,3 @@
-/*
-*
-*	Author: Jiří Veverka (xvever12):
-*	Module implementing wiegand communicaton
-*
-*/
-
 #ifndef __WIEGAND_H
 #define __WIEGAND_H
 

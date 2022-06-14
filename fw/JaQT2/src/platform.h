@@ -30,7 +30,7 @@
 #include <libopencm3/cm3/memorymap.h>
 #include <libopencm3/usb/usbd.h>
 
-#define BOARD_IDENT       "JaQT Firmware v" FIRMWARE_VERSION ""
+#define BOARD_IDENT       "TBS JaQT2 Firmware v" FIRMWARE_VERSION ""
 
 /* Use PC13 for a "dummy" uart led. So we can observe the LED. */
 #define LED_PORT_UART	GPIOC
@@ -50,7 +50,8 @@ static inline void _gpio_set(uint32_t gpioport, uint16_t gpios)
 
 static inline void _gpio_clear(uint32_t gpioport, uint16_t gpios)
 {
-	GPIO_BRR(gpioport) = gpios;
+	//GPIO_BRR(gpioport) = gpios;
+	GPIO_BSRR(gpioport) = (gpios << 16);
 }
 #define gpio_clear _gpio_clear
 
@@ -60,7 +61,7 @@ static inline uint16_t _gpio_get(uint32_t gpioport, uint16_t gpios)
 }
 #define gpio_get _gpio_get
 
-int platform_ready;
+uint8_t get_platform_status();
 
 uint32_t detect_rev(void);
 void platform_timing_init(void);

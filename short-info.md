@@ -10,6 +10,6 @@ To merge app and bootloader into one binary, run: make merge
 
 To clean workspace run: make clean
 
-To flash device with bootloader run: st-flash --reset write <choosen_bootloader.bin> 0x8000000 (or run: make init_flash)
+To flash device with bootloader run st-flash --reset write <choosen_bootloader.bin> 0x8000000
 
 To update app on already running device use make flash PORT=/dev/ttyACM<number of shell port, typically a (multiple of 4) - 1>

@@ -1,13 +1,3 @@
-/*
-*
-*   Author: Roger Clark
-*   Source: https://github.com/rogerclarkmelbourne/STM32duino-bootloader
-*   Binary sketch combiner source code
-*
-*/
-
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>

@@ -1,10 +1,5 @@
 import serial
 
-#
-# Author: Jiří Veverka
-# implementation of base class for testing
-#
-
 class JustAQuickTest2:
     def __init__(self, tty):
         self.tty = tty
@@ -42,21 +37,25 @@ class JustAQuickTest2:
             echo = echo[len(request):]  
 
         lines += echo
+ #       lines += "\n"
+        #print(echo)
         count = 0
         while count < 1:
             response = self.serial.read_until("\r\n")
             
             if response == "".encode("utf-8"):
-                break #delete if problems with missing output occurs
+                break #delete if output missing problems
                 count += 1
                 response = self.serial.read_until()
 
             response = response.decode("utf-8").strip()
-
+            #print(response)
+            #print(response)
             lines += response
-
+#            lines += "\n"
       
         return lines
+        #return ""
     def transcieveNoResp(self, request):
         request += "\n"
         request = request.encode("utf-8")
@@ -85,10 +84,14 @@ class JustAQuickTest2:
 
     def wiegand_read(self, state, count=26, mode=""):
         if state == "start" or state == "stop":
+            #return self.transcieve(f"wiegand {count} start")
+            #print(state)
             if mode == "":
+                #print("mode null")
                 return self.transcieve(f"wiegand {count} {state}")
             
             elif mode == "continuous":
+                #print("mode continuous")
                 return self.transcieve(f"wiegand {mode} {count} {state}")
 
             else:

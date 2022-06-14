@@ -23,20 +23,11 @@
  */
 
 #include "general.h"
-/*
------------ ADDED BY xvever12 -----------
-	Includes implemented modules
------------------------------------------
-*/
 #include "usb/cdcacm.h"
 #include "usb/usbuart.h"
 #include "control_shell/usbshell.h"
 #include "i2c/i2cbase.h"
 #include "i2c/i2cgpio.h"
-/*
------------ End of section -----------
------------------------------------------
-*/
 
 #include <libopencm3/stm32/rcc.h>
 #include <libopencm3/cm3/systick.h>
@@ -46,29 +37,15 @@
 #include <libopencm3/stm32/usart.h>
 #include <libopencm3/usb/usbd.h>
 #include <libopencm3/stm32/adc.h>
-/*
------------ ADDED BY xvever12 -----------
-	Include I2C module for board initialization
------------------------------------------
-*/
 #include <libopencm3/stm32/i2c.h>
-/*
------------ End of section -----------
------------------------------------------
-*/
 
-/*
------------ ADDED BY xvever12 -----------
-	Add variable which is used to indicate if
-	platform is initialized and ready to start
------------------------------------------
-*/
-int platform_ready;
-/*
------------ End of section -----------
------------------------------------------
-*/
+uint8_t platform_ready = 0;
 static uint32_t rev;
+
+uint8_t get_platform_status()
+{
+	return platform_ready;
+}
 
 /* return 0 for stlink V1, 1 for stlink V2 and 2 for stlink V2.1 */
 uint32_t detect_rev(void)
@@ -129,18 +106,24 @@ uint32_t detect_rev(void)
 		GPIO_CNF_OUTPUT_ALTFN_PUSHPULL, GPIO8);
 	}
 	if (rev < 2) {
+		gpio_set_mode(GPIOA, GPIO_MODE_OUTPUT_2_MHZ,
+						GPIO_CNF_OUTPUT_PUSHPULL, GPIO12);
+		gpio_clear(GPIOA, GPIO12);
+
+		volatile unsigned int delay;
+		for (delay = 0; delay < 512; delay++);
+
+		gpio_set_mode(GPIOA, GPIO_MODE_INPUT,
+						GPIO_CNF_INPUT_FLOAT, GPIO12);
+		/*
 		gpio_clear(GPIOA, GPIO12);
 		gpio_set_mode(GPIOA, GPIO_MODE_OUTPUT_2_MHZ,
 					  GPIO_CNF_OUTPUT_OPENDRAIN, GPIO12);
+		*/
 	}
 	return rev;
 }
 
-/*
------------ ADDED BY xvever12 -----------
-	Function initializing GPIO states on startup
------------------------------------------
-*/
 void gpio_init(void){
 	gpio_set_mode(GPIOC, GPIO_MODE_OUTPUT_2_MHZ,
 	              GPIO_CNF_OUTPUT_PUSHPULL, GPIO13); //Status LED
@@ -163,6 +146,17 @@ void gpio_init(void){
 	gpio_set_mode(GPIOB, GPIO_MODE_INPUT,
 	              GPIO_CNF_INPUT_PULL_UPDOWN, GPIO5);
 
+	gpio_set_mode(GPIOB, GPIO_MODE_INPUT,
+				  GPIO_CNF_INPUT_PULL_UPDOWN, GPIO12);
+
+	gpio_set_mode(GPIOB, GPIO_MODE_INPUT,
+				  GPIO_CNF_INPUT_PULL_UPDOWN, GPIO13);
+
+	gpio_set_mode(GPIOB, GPIO_MODE_INPUT,
+				  GPIO_CNF_INPUT_PULL_UPDOWN, GPIO14);
+
+	gpio_set(GPIOB, GPIO13 | GPIO12 | GPIO14);
+
 	gpio_clear(GPIOA, GPIO15);
 	gpio_clear(GPIOB, GPIO4);
 
@@ -170,55 +164,19 @@ void gpio_init(void){
 	gpio_clear(GPIOB, GPIO15 | GPIO3 | GPIO4 | GPIO5);
 	gpio_toggle(GPIOB, GPIO15);
 }
-/*
------------ End of section -----------
------------------------------------------
-*/
 
 void platform_init(void)
 {
-	/*
-	----------- ADDED BY xvever12 -----------
-		Set flag to indicate platform is not ready yet
-	-----------------------------------------
-	*/
-	platform_ready = 0;
-	/*
-	----------- End of section -----------
-	-----------------------------------------
-	*/
 	rev = detect_rev();
 	SCS_DEMCR |= SCS_DEMCR_VC_MON_EN;
 
-	/*
-	----------- ADDED BY xvever12 -----------
-		Disable JTAG but keep SWD on
-	-----------------------------------------
-	*/
 	uint32_t reg = AFIO_MAPR;
 	reg &= ~(AFIO_MAPR_SWJ_CFG_JTAG_OFF_SW_ON);
 	reg |= (1<<25);
 	AFIO_MAPR = reg;
-	/*
-	----------- End of section -----------
-	-----------------------------------------
-	*/
 
-
-	/*
-	----------- ADDED BY xvever12 -----------
-		New version of libopencm3 library
-		has different function for setting clock
-		frequency. Added for compatibility.
-	-----------------------------------------
-	*/
 	rcc_clock_setup_pll(&rcc_hse_configs[RCC_CLOCK_HSE8_72MHZ]);
 	
-	/*
-	----------- End of section -----------
-	-----------------------------------------
-	*/
-
 	/* Relocate interrupt vector table here */
 	extern int vector_table;
 	SCB_VTOR = (uint32_t)&vector_table;
@@ -232,17 +190,9 @@ void platform_init(void)
 	if (!(SCS_DEMCR & SCS_DEMCR_TRCENA))
 		usbuart_init();
 
-	/*
-	----------- ADDED BY xvever12 -----------
-		Call init functions of newly added modules
-	-----------------------------------------
-	*/
 	gpio_init();
+
 	i2c_setup();
-	/*
-	----------- End of section -----------
-	-----------------------------------------
-	*/
 
 	cmd |= 0xFF; //Set all GPIO I2C exp pins to 1 (req for default/read mode)
 	i2c_transfer7(I2C1, I2C_EXPANDER_ADDRESS, &cmd, sizeof(cmd), 0, 0);
@@ -273,10 +223,3 @@ void sys_tick_handler(void)
 	time_ms += 100;
 }
 
-/*
------------ REMOVED BY xvever12 -----------
-	Everything that was after this point
-	was removed because it was unnecessary
-	to have (it did not brought any functionality)
------------------------------------------
-*/

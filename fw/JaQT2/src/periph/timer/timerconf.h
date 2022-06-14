@@ -1,11 +1,3 @@
-/*
-*
-*	Author: satoshinm
-*	Changed and modularised by: xvever12
-*	Taken from usbusart.h and made into separate module by xvever12
-*	Initializes timer peripherals
-*/
-
 #ifndef __TIMER_CONF_H
 #define __TIMER_CONF_H
 

@@ -1,8 +1,3 @@
-#
-# Author: Jiří Veverka
-# Example class for testing Wiegand
-#
-
 class WiegandTests:
     def basicStart(test):
         test = test.__enter__()

@@ -28,25 +28,14 @@
 #include <libopencm3/cm3/scs.h>
 #include <libopencm3/stm32/exti.h>
 
-/*
-*
-*	Author: satoshinm
-*	Changed and modularised by: xvever12
-*	Implements usart communication
-*
-*/
-
 #include "general.h"
 #include "cdcacm.h"
 #include "usartconf.h"
 
-/*
------------ ADDED BY xvever12 -----------
-	Add includes to created modules
------------------------------------------
-*/
 #include "../control_shell/usbshell.h"
 #include "../wiegand/wiegand.h"
+
+#include "../serial/tester/honeywell/honeywell.h"
 
 #include "../periph/timer/timerconf.h"
 #include "../periph/exti/exticonf.h"
@@ -56,10 +45,6 @@
 #if DEBUG_COMMANDS
 #include "rs485/debug/debugrs485.h"
 #endif
-/*
------------ End of section -----------
------------------------------------------
-*/
 
 #define FIFO_SIZE 128
 
@@ -80,10 +65,7 @@ static void usbuart_run(int USBUSART_TIM, uint8_t *buf_rx_out, uint8_t *buf_rx_i
 
 
 /*
------------ ADDED BY xvever12 -----------
-	Initializes serial peripherals, 
-	timers, interrupts and gpios
------------------------------------------
+ Reconsider renaming it to "system_init(void)" and moving it somewhere else...
 */
 void usbuart_init(void)
 {
@@ -105,10 +87,6 @@ void usbuart_init(void)
 	/* Setup timer for running deferred FIFO processing */
 	timerSETUP();
 }
-/*
------------ End of section -----------
------------------------------------------
-*/
 
 /*
  * Runs deferred processing for usb uart rx, draining RX FIFO by sending
@@ -117,6 +95,7 @@ void usbuart_init(void)
  */
 static void usbuart_run(int USBUSART_TIM, uint8_t *buf_rx_out, uint8_t *buf_rx_in, uint8_t *buf_rx, int CDCACM_UART_ENDPOINT)
 {
+	gpio_clear(LED_PORT_UART, LED_UART);
 	/* forcibly empty fifo if no USB endpoint */
 	if (cdcacm_get_config() != 1)
 	{
@@ -127,7 +106,6 @@ static void usbuart_run(int USBUSART_TIM, uint8_t *buf_rx_out, uint8_t *buf_rx_i
 	if (*buf_rx_in == *buf_rx_out) {
 		/* turn off LED, disable IRQ */
 		timer_disable_irq(USBUSART_TIM, TIM_DIER_UIE);
-		gpio_clear(LED_PORT_UART, LED_UART);
 	}
 	else
 	{
@@ -153,12 +131,6 @@ static void usbuart_run(int USBUSART_TIM, uint8_t *buf_rx_out, uint8_t *buf_rx_i
 				CDCACM_UART_ENDPOINT, packet_buf, packet_size);
 		*buf_rx_out %= FIFO_SIZE;
 
-/*
------------ ADDED BY xvever12 -----------
-	Debug functions enabling listnening
-	to other serials in command shell
------------------------------------------
-*/
 #if DEBUG_COMMANDS
 		if(read232 && CDCACM_UART_ENDPOINT == 1){
 			usbd_ep_write_packet(usbdev, VIRTUAL_OUT, packet_buf, packet_size);
@@ -170,10 +142,6 @@ static void usbuart_run(int USBUSART_TIM, uint8_t *buf_rx_out, uint8_t *buf_rx_i
 			usbd_ep_write_packet(usbdev, VIRTUAL_OUT, packet_buf, packet_size);
 		}
 #endif
-/*
------------ End of section -----------
------------------------------------------
-*/
 	}
 }
 
@@ -238,7 +206,7 @@ static void usbuart_usb_out_cb(int USBUSART, usbd_device *dev, uint8_t ep, int C
 					buf, CDCACM_PACKET_SIZE);
 
 
-	gpio_set(LED_PORT_UART, LED_UART);
+	//gpio_set(LED_PORT_UART, LED_UART);
 	for(int i = 0; i < len; i++){
 		usart_send_blocking(USBUSART, buf[i]);
 	}
@@ -260,11 +228,6 @@ void usbuart3_usb_out_cb(usbd_device *dev, uint8_t ep)
     usbuart_usb_out_cb(USART3, dev, ep, 3);
 }
 
-/*
------------ ADDED BY xvever12 -----------
-	Processes incoming data on virtual interface
------------------------------------------
-*/
 void usbuartvirt_usb_out_cb(usbd_device *dev, uint8_t ep)
 {
     (void)ep;
@@ -274,10 +237,6 @@ void usbuartvirt_usb_out_cb(usbd_device *dev, uint8_t ep)
 
 	if(len)	send_usbd_packet(dev, VIRTUAL_OUT, buf, len, 1);
 }
-/*
------------ End of section -----------
------------------------------------------
-*/
 
 void usbuart_usb_in_cb(usbd_device *dev, uint8_t ep)
 {
@@ -293,30 +252,16 @@ void usbuart_usb_in_cb(usbd_device *dev, uint8_t ep)
 // USBUSART_ISR
 static void usart_isr(int USBUSART, int USBUSART_TIM, uint8_t *buf_rx_out, uint8_t *buf_rx_in, uint8_t *buf_rx)
 {
-/*
------------ ADDED BY xvever12 -----------
-	RS485 testing functionality
------------------------------------------
-*/
 	if (rs485_test && (USBUSART == USART3) && rs485_sent && !rs485_tim_wait) {
 		timer_disable_irq(TIM1, TIM_DIER_UIE);
 		timer_disable_counter(TIM1);
 	}
-/*
------------ End of section -----------
------------------------------------------
-*/
 
 	uint32_t err = USART_SR(USBUSART);
 	char c = usart_recv(USBUSART);
 	if (err & (USART_SR_ORE | USART_SR_FE))
 		return;
 
-/*
------------ ADDED BY xvever12 -----------
-	RS485 testing functionality
------------------------------------------
-*/
 	if (rs485_test && USBUSART == USART3) {
 		if (rs485_tim_wait || !rs485_sent) return;
 		rs485_sent = 0; //Should always get here
@@ -328,10 +273,6 @@ static void usart_isr(int USBUSART, int USBUSART_TIM, uint8_t *buf_rx_out, uint8
 		test_rs485();
 		return;
 	}
-/*
------------ End of section -----------
------------------------------------------
-*/
 
 	/* Turn on LED */
 	gpio_set(LED_PORT_UART, LED_UART);

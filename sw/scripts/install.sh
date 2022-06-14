@@ -1,10 +1,5 @@
 #!/bin/bash
 
-#
-# Author: Jiří Veverka
-# Install Python requirements
-#
-
 read -p "Install pip? [Y/N]" input
 
 if [[ $input == 'Y' ]] || [[ $input == 'y' ]]; then

@@ -1,9 +1,3 @@
-#
-#	Author: satoshinm
-#	Source: https://github.com/satoshinm/pill_serial
-#
-
-
 ifneq ($(V), 1)
 MFLAGS += --no-print-dir
 Q := @

@@ -1,7 +1,3 @@
-/*
-*   Author: Jiří Veverka
-*   Module implementing tokenization of currently processed command packet
-*/
 #ifndef __TOKENIZER_H
 #define __TOKENIZER_H
 

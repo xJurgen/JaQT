@@ -1,5 +1,4 @@
 # Just a Quick Test2 app
-# Author: Jiří Veverka
 # Copy this to /etc/udev/rules.d/92-JaQT2.rules
 
 SUBSYSTEM=="tty", ACTION=="add", ATTRS{interface}=="JaQT2 Port 0", SYMLINK+="ttyJaQT2Port0"

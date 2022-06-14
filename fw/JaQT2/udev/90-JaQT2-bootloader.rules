@@ -1,5 +1,4 @@
 # Just a Quick Test2 bootloader
-# Author: Jiří Veverka
 # Copy this to /etc/udev/rules.d/90-JaQT2-bootloader.rules
 
 SUBSYSTEM=="tty", ACTION=="add", ATTRS{interface}=="Bootloader UART port", SYMLINK+="ttyJaQT2Boot"

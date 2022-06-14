@@ -1,9 +1,3 @@
-/*
-*
-*	Author: xvever12
-*	Wiegand interrupt configuration module
-*
-*/
 #ifndef __EXTI_CONF_H
 #define __EXTI_CONF_H
 

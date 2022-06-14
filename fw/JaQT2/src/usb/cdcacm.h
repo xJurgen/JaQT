@@ -28,15 +28,9 @@
 
 #include <libopencm3/usb/usbd.h>
 
-/*
-    Changed and added by xvever12
-    Redefines packet size from 64 to 32 for better handling capabilities
-    Adds virtual in and virtual out endpoint addresses
-*/
 #define CDCACM_PACKET_SIZE 	32
 #define VIRTUAL_IN 0x07
 #define VIRTUAL_OUT 0x87
-/*-----------end of section----------*/
 
 extern usbd_device *usbdev;
 

@@ -1,7 +1,3 @@
-/*
-*   Author: Jiří Veverka
-*   Module implementing flash reading and writing functionalities
-*/
 #include "flash_eeprom.h"
 
 #include <stdint.h>

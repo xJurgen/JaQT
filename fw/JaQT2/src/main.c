@@ -22,13 +22,6 @@
  * protocol loop.
  */
 
-/*
-*
-*	Changes made by Jiří Veverka (xvever12):
-*	Removed unnecessary macros and an commentary
-*
-*/
-
 #include "general.h"
 
 int main(int argc, char **argv)

@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 
-#
-# Author: Jiří Veverka
-# Example usage of test class
-#
-
 import sys
 
 from os import wait
@@ -34,6 +29,9 @@ def basicTests(test):
     while True:
         BasicTests.KnightRider(test)
 
+    BasicTests.TestClear(test)
+
+    BasicTests.TestReset(test)
 
 def wiegandTests(test):
     #WiegandTests.basicStart(test)

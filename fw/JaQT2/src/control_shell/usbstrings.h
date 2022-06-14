@@ -1,7 +1,3 @@
-/*
-*   Author: Jiří Veverka
-*   Module defines shell string constants (messages)
-*/
 #ifndef __USBSTRINGS_H
 #define __USBSTRINGS_H
 
@@ -22,8 +18,11 @@ static const char help[] = "[OK] Commands are:\r\n"
 		"port info - shows an information about cdc_acm ports\r\n"
 		"clear - clear screen\r\n"
 		"reset device - resets this device\r\n"
-		"gpio [n] set [1|0] - turn gpio [1-14 | all] [on | off]\r\n"
-		"gpio [n] get - get gpio [1-14 | all] value (on = 1, off = 0)\r\n"
+		"gpio [n] set [in|out] [1|0] - set gpio into output or input HIGH/LOW state:\r\n"
+		"       input low (pull-down): gpio [1-6] set in 0\r\n"
+		"       input high (pull-up): gpio [1-14] set in 1\r\n"
+		"       output high|low: gpio [1-14|all] set out [1|0]\r\n"
+		"gpio [n] get - get value from gpio [1-14], results = (1 | 0)\r\n"
 		"wiegand [continuous] [size] start|stop - starts or stops reading from wiegand.\r\n"
 		"    Optional arguments:\r\n"
 		"       [continuous] - to read from wiegand continually\r\n"

@@ -1,9 +1,3 @@
-/*
-*
-*	Author: xvever12
-*	Wiegand interrupt configuration module
-*
-*/
 #include "exticonf.h"
 
 #include <stdint.h>

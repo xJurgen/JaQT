@@ -1,7 +1,3 @@
-/*
-*   Author: Jiří Veverka
-*   Module implementing tokenization of currently processed command packet
-*/
 #include "tokenizer.h"
 
 #include <stdlib.h>

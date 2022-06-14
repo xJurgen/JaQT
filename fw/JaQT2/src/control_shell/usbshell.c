@@ -3,6 +3,7 @@
 *   Author: Jiří Veverka
 */
 
+
 #include "usbshell.h"
 #include "usbstrings.h"
 
@@ -17,6 +18,8 @@
 #include "../i2c/i2cina219.h"
 #include "../i2c/i2cbase.h"
 #include "../print_float.h"
+
+#include "../serial/tester/honeywell/honeywell.h"
 
 #include "../flash/flash_eeprom.h"
 
@@ -114,19 +117,19 @@ void read_command(){
 				float busvoltage = ina219GetBusVoltage_V();
 
 				char currStr[numsize];
-				get_float(ina219GetCurrent_mA(), currStr, numsize);
+				format_float(ina219GetCurrent_mA(), currStr, numsize);
 
 				char powStr[numsize];
-				get_float(ina219GetPower_mW(), powStr, numsize);
+				format_float(ina219GetPower_mW(), powStr, numsize);
 
 				char loadStr[numsize];
-				get_float(busvoltage + (shuntvoltage / 1000), loadStr, numsize);
+				format_float(busvoltage + (shuntvoltage / 1000), loadStr, numsize);
 
 				char shuntStr[numsize];
-				get_float(shuntvoltage, shuntStr, numsize);
+				format_float(shuntvoltage, shuntStr, numsize);
 
 				char busStr[numsize];
-				get_float(busvoltage, busStr, numsize);
+				format_float(busvoltage, busStr, numsize);
 
 				char result[110];
 				sprintf(result, "[OK]\r\nBus voltage: %sV\r\nShunt voltage: %smV\r\n"

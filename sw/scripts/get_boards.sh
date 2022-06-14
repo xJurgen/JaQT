@@ -1,10 +1,5 @@
 #!/bin/bash
 
-#
-# Author: Jiří Veverka
-# Returns info about connected JaQT board
-#
-
 JAQT_INTERFACES=($(ls /dev/ | grep ttyACM))
 
 echo "Interfaces: "

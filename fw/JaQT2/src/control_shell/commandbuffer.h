@@ -1,7 +1,3 @@
-/*
-*   Author: Jiří Veverka
-*   Module implementing buffer for incoming commands
-*/
 #ifndef __COMMAND_BUFFER_H
 #define __COMMAND_BUFFER_H
 

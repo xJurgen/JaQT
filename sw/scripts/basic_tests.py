@@ -1,8 +1,3 @@
-#
-# Author: Jiří Veverka
-# Example test class
-#
-
 class BasicTests:
     def TestHelp(test):
         test = test.__enter__()

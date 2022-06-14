@@ -1,7 +1,3 @@
-/*
-*   Author: Jiří Veverka
-*   Module implementing flash reading and writing functionalities
-*/
 #ifndef __GPIO_CONTROL_H
 #define __GPIO_CONTROL_H
 

@@ -1,11 +1,3 @@
-/*
-*
-*	Author: satoshinm
-*	Changed and modularised by: xvever12
-*	Created from former usbusart.c by xvever12
-*	Implements usart configuration
-*
-*/
 #include "usartconf.h"
 
 #include <libopencm3/stm32/usart.h>

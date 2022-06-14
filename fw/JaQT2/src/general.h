@@ -18,13 +18,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
-/*
-*
-*	Changes made by Jiří Veverka (xvever12):
-*	Removed unnecessary macros and stddef library
-*
-*/
 #ifndef __GENERAL_H
 #define __GENERAL_H
 

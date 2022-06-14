@@ -1,9 +1,6 @@
-/*
-*   Author: Jiří Veverka
-*   Module implementing buffer for incoming commands
-*/
 #include "commandbuffer.h"
 #include "tokenizer.h"
+#include "gpiocommands.h"
 
 // Buffer for reading commands to be executed
 char packetBuffer[MAX_PACKET_SIZE];
@@ -25,6 +22,7 @@ char *getPacketBuffer()
 	Initializes packet (command) buffer
 */
 void init_command_buffer() {
+	statusOff(2);
 	packetPtr = 0;
 	for(int i = 0; i < MAX_PACKET_SIZE; i++) {
 		packetBuffer[i] = 0;
@@ -52,6 +50,6 @@ void delete_last() {
 //TODO: Change void to char
 void add_to_buffer(const void *messageBuffer, int pos){
 	if(packetPtr == MAX_PACKET_SIZE) return;
-
+	if (pos == 0) statusOn(2);
 	packetBuffer[packetPtr++] = ((char*)messageBuffer)[pos];
 }

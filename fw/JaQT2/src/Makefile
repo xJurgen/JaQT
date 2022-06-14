@@ -1,10 +1,7 @@
-# Original project makefile made by satoshinm
-# Changes made by: Jiří Veverka (xvever12)
-
-VERSION = 1.1 #Added by xvever12
+VERSION = 1.1
 DATETIME := $(shell date --iso-8601=seconds)
 ENABLE_DEBUG ?=
-JAQT_DEBUG = 0 #Added by xvever12
+JAQT_DEBUG = 0
 
 ifneq ($(V), 1)
 MAKEFLAGS += --no-print-dir
@@ -23,7 +20,6 @@ ifeq ($(ENABLE_DEBUG), 1)
 CFLAGS += -DENABLE_DEBUG
 endif
 
-#Added new modules (by xvever12)
 SRC =			\
 	main.c		\
 	platform.c	\
@@ -49,7 +45,6 @@ SRC =			\
 	serial/tester/honeywell/honeywell.c \
 	flash/flash_eeprom.c \
 
-#Added new modules (by xvever12)
 OBJ =			\
 	usb/cdcacm.o	\
 	usb/usbuart.o	\
@@ -72,7 +67,6 @@ OBJ =			\
 	serial/tester/honeywell/honeywell.o \
 	flash/flash_eeprom.o \
 
-#Added new modules (by xvever12)
 DEP =			\
 	usb/cdcacm.d	\
 	usb/usbuart.d	\
@@ -116,10 +110,8 @@ else
 LDFLAGS += --specs=nosys.specs
 endif
 
-#Changes pill_serial to jaqt2 by xvever12
 all: jaqt2.bin
 
-#Added by xvever12
 help:
 	$(Q)echo "Usage example: make flash BOARD_NO=4 PORT=/dev/ttyACM3"
 
@@ -153,7 +145,6 @@ clean:	host_clean
 	-$(Q)$(RM) -f $(DEP)
 	-$(Q)$(RM) -f $(OBJ)
 
-#Changed by xvever12 - added new defines to generate
 version.h: FORCE
 	$(Q)echo "  CREATE  version.h"
 	$(Q)echo "#define FIRMWARE_VERSION \"$(VERSION)\"" > $@
@@ -161,7 +152,6 @@ version.h: FORCE
 	$(Q)echo "#define WIEGAND_DEBUG $(JAQT_DEBUG)" >> $@
 	$(Q)echo "#define DEBUG_COMMANDS $(JAQT_DEBUG)" >> $@
 
-#Added by xvever12
 flash: all
 ifndef PORT
 	$(error PORT is undefined)
@@ -180,7 +170,6 @@ endif
 
 -include *.d
 
-#Added by xvever12
 init_flash: jaqt2.bin
 	@-sleep .5 && dfu-util -a 2 -D jaqt2.bin
 	$(Q)echo "dfu-util may throw an error. This is a known bug on linux systems."

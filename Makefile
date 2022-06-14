@@ -1,9 +1,3 @@
-#
-# Author: Jiří Veverka
-# Main project makefile, used to build and flash the project
-#
-
-
 CC = gcc
 Q := @
 MFLAGS += --no-print-dir

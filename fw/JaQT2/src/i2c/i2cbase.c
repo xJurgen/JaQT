@@ -1,6 +1,5 @@
 /*
 *   I2C Base functions inspired by libopencm3 I2C example
-*	Source: https://github.com/libopencm3/libopencm3-examples/tree/master/examples/stm32/f1
 *   Author: Jiří Veverka
 */
 #include <errno.h>
@@ -57,10 +56,6 @@ void i2c_setup(void)
 	i2c_peripheral_enable(I2C1);
 }
 
-/*
-	Created by: xvever12
-	Probes given address on I2C interface
-*/
 uint8_t i2c_probe(uint8_t addr)
 {
 	i2c_send_start(I2C1);

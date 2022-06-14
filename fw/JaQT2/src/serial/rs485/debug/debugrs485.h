@@ -1,10 +1,3 @@
-/*
-*
-*	Author: Jiří Veverka (xvever12):
-*	Module implementing rs485 debug testing
-*
-*/
-
 #ifndef __DEBUG_RS485_H
 #define __DEBUG_RS485_H
 

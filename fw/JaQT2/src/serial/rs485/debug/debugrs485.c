@@ -1,10 +1,3 @@
-/*
-*
-*	Author: Jiří Veverka (xvever12):
-*	Module implementing rs485 debug testing
-*
-*/
-
 #include "debugrs485.h"
 
 #include <stdio.h>
